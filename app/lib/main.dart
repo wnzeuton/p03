@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -80,11 +81,11 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               "p03",
-              style: TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w400)
+              style: GoogleFonts.getFont("Roboto Mono", color: Colors.white, fontSize: 32, fontWeight: FontWeight.w800)
             ),
             Text(
               "flutter/dart",
-              style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w400)
+              style: GoogleFonts.getFont("Roboto Mono", color: Colors.white, fontSize: 16, fontWeight: FontWeight.w300)
             ),
           ],
         ),
