@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'state_management.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         scaffoldBackgroundColor: Colors.black,
         useMaterial3: true,
+        textTheme: GoogleFonts.robotoMonoTextTheme().copyWith(bodyMedium: GoogleFonts.robotoMono(fontSize: 16, color: Colors.white),
+        titleLarge: GoogleFonts.robotoMono(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white)),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -81,11 +84,19 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               "p03",
-              style: GoogleFonts.getFont("Roboto Mono", color: Colors.white, fontSize: 32, fontWeight: FontWeight.w800)
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             Text(
               "flutter/dart",
-              style: GoogleFonts.getFont("Roboto Mono", color: Colors.white, fontSize: 16, fontWeight: FontWeight.w300)
+            ),
+            ElevatedButton(
+              child: const Text('Begin'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const States()),
+                );
+              },
             ),
           ],
         ),
