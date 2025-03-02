@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'fundamentals.dart';
+
 class Introduction extends StatelessWidget {
   const Introduction({super.key});
 
@@ -186,6 +188,15 @@ class Introduction extends StatelessWidget {
                     "More on Dart with Flutter",
                     style: TextStyle(color: Colors.blueAccent, fontSize: 16),
                   ),
+                ),
+                ElevatedButton(
+                  child: const Text('Fundamentals and Key Concepts'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Fundamentals()),
+                    );
+                  },
                 ),
               ],
             ),
