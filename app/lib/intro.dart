@@ -24,7 +24,7 @@ class Introduction extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  "Dart is a programming language optimized for building fast, cross-platform apps. "
+                  "Dart is a programming language optimized for building fast, cross-platform apps. Flutter developmenet is done in the Dart language. "
                   "Some key features include:",
                   style: TextStyle(color: Colors.white),
                 ),
@@ -128,6 +128,63 @@ class Introduction extends StatelessWidget {
                         style: TextStyle(color: Colors.white),
                       ),
                     ],
+                  ),
+                ),
+                const SizedBox(height: 20),
+                TextButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        backgroundColor: Colors.black,
+                        title: Text(
+                          "Notable Dart Features for Flutter",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: const [
+                              Text(
+                                "1. Null Safety: Dart offers strong null safety to help prevent null reference errors. "
+                                "You can use '?' to indicate nullable types and '!' to assert that a variable is not null.",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "2. Type Inference: Dart can infer types, which reduces the need to specify types explicitly. "
+                                "However, it is still strongly typed to maintain clarity and readability.",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "3. Asynchronous Programming: Dart supports async programming with 'async', 'await', and 'Future', "
+                                "allowing for non-blocking operations, which is essential in Flutter for building responsive UIs.",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "4. Extension Methods: Dart allows you to add methods to existing classes without modifying the class itself, "
+                                "which can be useful for enhancing Flutter widgets or other libraries.",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.of(context).pop(),
+                            child: const Text(
+                              "Close",
+                              style: TextStyle(color: Colors.blueAccent),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "More on Dart with Flutter",
+                    style: TextStyle(color: Colors.blueAccent, fontSize: 16),
                   ),
                 ),
               ],
