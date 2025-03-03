@@ -7,7 +7,7 @@ class Sum extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Why Choose Flutter?'),
+        title: const Text('Why Use Flutter?'),
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
       ),
@@ -18,7 +18,7 @@ class Sum extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Why Use Flutter?',
+              'Key Reasons:',
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 20),

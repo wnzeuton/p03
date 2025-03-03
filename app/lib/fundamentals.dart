@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'developing.dart';
+import 'summary.dart';
 import 'state_management.dart';
 
 class Fundamentals extends StatelessWidget {
