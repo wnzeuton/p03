@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'developing.dart';
+import 'state_management.dart';
 
 class Fundamentals extends StatelessWidget {
   const Fundamentals({super.key});
@@ -18,8 +19,37 @@ class Fundamentals extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
+              "Flutter Widgets",
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: Colors.blueAccent, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              "Everything in Flutter is a widget! Widgets are the building blocks of a Flutter UI, similar to components in other frameworks."
+              " They describe what should appear on the screen and can be composed together to create complex layouts.",
+              style: TextStyle(color: Colors.white),
+            ),
+            const SizedBox(height: 15),
+            _buildLayerSection(
+              title: "Stateless Widgets",
+              description:
+                  "Stateless widgets are immutable. Once created, they cannot change their internal state.",
+              example:
+                  "Examples: Text, Icon, Image, Container. These widgets do not update once rendered.",
+              color: Colors.greenAccent,
+            ),
+            _buildLayerSection(
+              title: "Stateful Widgets",
+              description:
+                  "Stateful widgets can change dynamically during the app's lifecycle. They maintain internal state that affects how they render.",
+              example:
+                  "Examples: TextField, Checkbox, AnimatedContainer. These widgets update based on user interaction or other events.",
+              color: Colors.orangeAccent,
+            ),
+            const SizedBox(height: 20),
+            Text(
               "Flutter's Layered Architecture",
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: Colors.blueAccent, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
@@ -60,7 +90,7 @@ class Fundamentals extends StatelessWidget {
             const SizedBox(height: 30),
             Text(
               "State Management",
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: Colors.blueAccent, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
@@ -85,12 +115,13 @@ class Fundamentals extends StatelessWidget {
               "State management is crucial to ensure that changes in state are reflected in the UI and that features like user authentication or settings remain synchronized across multiple screens.",
               style: TextStyle(color: Colors.white),
             ),
+            SizedBox(height:15),
             ElevatedButton(
-              child: const Text('Developing in Flutter'),
+              child: const Text('State Management Demo'),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Developing()),
+                  MaterialPageRoute(builder: (context) => CounterApp()),
                 );
               },
             ),
@@ -118,7 +149,7 @@ class Fundamentals extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: color),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: color),
               ),
               const SizedBox(height: 5),
               Text(
@@ -128,7 +159,7 @@ class Fundamentals extends StatelessWidget {
               const SizedBox(height: 5),
               Text(
                 example,
-                style: const TextStyle(fontSize: 14, color: Colors.cyanAccent),
+                style: const TextStyle(fontSize: 18, color: Colors.cyanAccent),
               ),
             ],
           ),

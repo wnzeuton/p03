@@ -20,8 +20,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
         scaffoldBackgroundColor: Colors.black,
         useMaterial3: true,
-        textTheme: GoogleFonts.robotoMonoTextTheme().copyWith(bodyMedium: GoogleFonts.robotoMono(fontSize: 16, color: Colors.white),
-        titleLarge: GoogleFonts.robotoMono(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white)),
+        textTheme: GoogleFonts.robotoMonoTextTheme().copyWith(
+          bodyMedium: GoogleFonts.robotoMono(fontSize: 24, color: Colors.white),
+          bodyLarge: GoogleFonts.robotoMono(fontSize: 28, color: Colors.white), 
+          titleLarge: GoogleFonts.robotoMono(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white), 
+          labelLarge: GoogleFonts.robotoMono(fontSize: 18, color: const Color.fromARGB(255, 0, 0, 0)), 
+        ),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -51,10 +55,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               "Will Nzeuton & Daniel Park",
+              style: Theme.of(context).textTheme.bodyLarge, 
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
-              child: const Text('Begin'),
+              child: Text(
+                'Begin',
+                style: Theme.of(context).textTheme.labelLarge, 
+              ),
               onPressed: () {
                 Navigator.push(
                   context,
