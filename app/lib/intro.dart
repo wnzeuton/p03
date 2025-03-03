@@ -39,14 +39,24 @@ class Introduction extends StatelessWidget {
                   children: const [
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.0),
-                      child: Text(
-                        "JIT compilation translates Dart source code into machine code at runtime, "
-                        "meaning the code is compiled while the program is running. This allows for "
-                        "dynamic execution and features like hot reload, making it especially useful during development.",
-                        style: TextStyle(color: Colors.white),
+                      child: Column(
+                        children: [
+                          Text(
+                            "JIT compilation translates Dart source code into machine code at runtime, "
+                            "meaning the code is compiled while the program is running. This allows for "
+                            "dynamic execution and features like hot reload, making it especially useful during development.",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "flutter run",
+                            style: TextStyle(color: Color.fromARGB(255, 240, 28, 28), fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          SizedBox(height: 10),
+                        ],
                       ),
                     ),
-                  ],
+                  ]
                 ),
                 ExpansionTile(
                   title: Text(
@@ -56,12 +66,22 @@ class Introduction extends StatelessWidget {
                   children: const [
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.0),
-                      child: Text(
-                        "AOT compilation translates Dart code into machine code before execution, "
-                        "rather than at runtime. This results in faster startup times and better overall performance, "
-                        "which is ideal for production environments.",
-                        style: TextStyle(color: Colors.white),
-                      ),
+                        child: Column(
+                          children: [
+                            Text(
+                              "AOT compilation translates Dart code into machine code before execution, "
+                              "rather than at runtime. This results in faster startup times and better overall performance, "
+                              "which is ideal for production environments.",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "flutter build",
+                              style: TextStyle(color: Color.fromARGB(255, 240, 28, 28), fontWeight: FontWeight.bold, fontSize: 18),
+                            ),
+                            SizedBox(height: 10),
+                          ],
+                        ),
                     ),
                   ],
                 ),
